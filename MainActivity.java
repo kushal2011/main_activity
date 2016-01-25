@@ -24,11 +24,17 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         ArrayAdapter adapter=ArrayAdapter.createFromResource(this, R.array.SemList, android.R.layout.simple_spinner_item);
         spinner.setAdapter(adapter);
         spinner.setOnItemSelectedListener(this);
+        
+        // Add second spinner listner here
+        spinner2.setOnItemSelectedListener(this);
     }
 
     @Override
     public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
         
+        
+        
+    // Check which spinner is clicked    
         
      Spinner SpinnerSel = (Spinner) parent;
      if(SpinnerSel.getId() == R.id.spinner)
@@ -46,7 +52,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
             adapter2.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
             adapter2.notifyDataSetChanged();
             spinner2.setAdapter(adapter2);
-            spinner2.setOnItemSelectedListener(this);
+           // spinner2.setOnItemSelectedListener(this);
         }
         else if(sp1.contentEquals("4th sem")) {
             ArrayAdapter adapter2 = ArrayAdapter.createFromResource(this, R.array.Sem4, android.R.layout.simple_spinner_item);
