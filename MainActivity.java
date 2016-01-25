@@ -28,6 +28,14 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 
     @Override
     public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+        
+        
+     Spinner SpinnerSel = (Spinner) parent;
+     if(SpinnerSel.getId() == R.id.spinner)
+     {
+         
+         // Code for first spinner click
+         
         String sp1= String.valueOf(spinner.getSelectedItem());
         TextView MyText=(TextView)view;
         Toast.makeText(this,"select subject from "+MyText.getText(),Toast.LENGTH_SHORT).show();
@@ -59,29 +67,31 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
             adapter2.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
             adapter2.notifyDataSetChanged();
             spinner2.setAdapter(adapter2);
-            // spinner2.setOnItemSelectedListener(this);
         }
         else if(sp1.contentEquals("7th sem")) {
             ArrayAdapter adapter2 = ArrayAdapter.createFromResource(this, R.array.Sem7, android.R.layout.simple_spinner_item);
             adapter2.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
             adapter2.notifyDataSetChanged();
             spinner2.setAdapter(adapter2);
-            // spinner2.setOnItemSelectedListener(this);
         }
         else if(sp1.contentEquals("8th sem")) {
             ArrayAdapter adapter2 = ArrayAdapter.createFromResource(this, R.array.Sem8, android.R.layout.simple_spinner_item);
             adapter2.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
             adapter2.notifyDataSetChanged();
             spinner2.setAdapter(adapter2);
-            // spinner2.setOnItemSelectedListener(this);
         }
         else if(sp1.contentEquals("1st year")) {
             ArrayAdapter adapter2 = ArrayAdapter.createFromResource(this, R.array.year1, android.R.layout.simple_spinner_item);
             adapter2.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
             adapter2.notifyDataSetChanged();
             spinner2.setAdapter(adapter2);
-            // spinner2.setOnItemSelectedListener(this);
-        }
+        }    
+     }
+     else if(SpinnerSel.getId() == R.id.spinner2)
+     {
+       // Write code for second spinner click here inside
+     }
+       
 
     }
 
